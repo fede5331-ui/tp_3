@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 2: Tarjetas seleccionables</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f4f8;
+    }
+
+    .contenedor {
+      background-color: #e8f0fb;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px 24px;
+      max-width: 620px;
+      margin-bottom: 20px;
+    }
+
+    .contenedor h1 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .contenedor p {
+      color: #555;
+      margin-top: 0;
+    }
+
+    nav {
+      margin-bottom: 0;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 8px;
+      padding: 5px 12px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #333;
+      background-color: white;
+    }
+
+    nav a:hover {
+      background-color: #e0e0e0;
+    }
+
+    #contador {
+      margin: 16px 0 12px 0;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .tarjeta {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      max-width: 580px;
+      cursor: pointer;
+    }
+
+    .tarjeta h3 {
+      margin: 0 0 6px 0;
+      font-size: 1rem;
+    }
+
+    .tarjeta p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .seleccionada {
+      background-color: #d4edda;
+      border-color: #4cae4c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>Ejercicio 2: Tarjetas seleccionables</h1>
+    <p>Hacer clic en las tarjetas para marcar o desmarcar con <code>classList.toggle</code>.</p>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="destacados.html">Ejercicio 2</a>
+      <a href="listado.html">Ejercicio 3</a>
+    </nav>
+  </div>
+
+  <p id="contador">Seleccionadas: 0</p>
+
+  <div class="tarjeta">
+    <h3>Película: Wall-E</h3>
+    <p>Aventura animada con mensaje ecológico.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h3>Juego: Minecraft</h3>
+    <p>Exploración y construcción por bloques.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h3>Canción: Viva la vida</h3>
+    <p>Pop rock con ritmo dinámico.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h3>Comida: Sándwich tostado</h3>
+    <p>Rápido, simple y fácil de preparar.</p>
+  </div>
+
+  <div class="tarjeta">
+    <h3>Lugar: Bariloche</h3>
+    <p>Ciudad rodeada de montañas y lagos.</p>
+  </div>
+
+  <script>
+    var tarjetas = document.querySelectorAll(".tarjeta");
+    var contador = document.getElementById("contador");
+
+    tarjetas.forEach(function(tarjeta) {
+      tarjeta.addEventListener("click", function() {
+        tarjeta.classList.toggle("seleccionada");
+        actualizarContador();
+      });
+    });
+
+    function actualizarContador() {
+      var seleccionadas = document.querySelectorAll(".seleccionada").length;
+      contador.textContent = "Seleccionadas: " + seleccionadas;
+    }
+  </script>
+
+</body>
+</html>

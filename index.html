@@ -11,25 +11,34 @@
       background-color: #f0f4f8;
     }
 
-    h1 {
+    .contenedor {
+      background-color: #e8f0fb;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px 24px;
+      max-width: 620px;
+      margin-bottom: 20px;
+    }
+
+    .contenedor h1 {
+      margin-top: 0;
       color: #333;
     }
 
-    p {
+    .contenedor p {
       color: #555;
-      margin-bottom: 10px;
+      margin: 0;
     }
 
-    /* Navegación */
     nav {
-      margin-bottom: 20px;
+      margin-top: 12px;
     }
 
     nav a {
       display: inline-block;
-      margin-right: 8px;         
-      padding: 5px 12px;          
-      border: 1px solid #999;     
+      margin-right: 8px;
+      padding: 5px 12px;
+      border: 1px solid #999;
       border-radius: 4px;
       text-decoration: none;
       color: #333;
@@ -40,14 +49,13 @@
       background-color: #e0e0e0;
     }
 
-    /* Sección de meriendas */
     .seccion {
       background-color: white;
-      border: 1px solid #ccc;     
+      border: 1px solid #ccc;
       border-radius: 6px;
-      padding: 16px 20px;        
-      margin-bottom: 20px;       
-      max-width: 600px;          
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      max-width: 600px;
     }
 
     .seccion h2 {
@@ -56,19 +64,17 @@
       color: #222;
     }
 
-    /* Lista de meriendas */
     #lista-meriendas {
-      padding-left: 20px;          
-      margin: 10px 0;             
+      padding-left: 20px;
+      margin: 10px 0;
     }
 
     #lista-meriendas li {
-      margin-bottom: 6px;          
+      margin-bottom: 6px;
     }
 
-    /* Botón */
     #btn-contar {
-      padding: 8px 16px;           
+      padding: 8px 16px;
       background-color: #4a90d9;
       color: white;
       border: none;
@@ -81,41 +87,35 @@
       background-color: #357abd;
     }
 
-    /* Texto resultado */
     #resultado-contador {
-      margin-top: 10px;            
+      margin-top: 10px;
       color: #333;
     }
   </style>
 </head>
 <body>
 
-  <h1>Ejercicio 1: Menú de meriendas</h1>
-  <p>Mostrar una lista desde un arreglo y, al hacer clic, indicar cuántos elementos tiene.</p>
-
-  <!-- Navegación -->
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="destacados.html">Ejercicio 2</a>
-    <a href="listado.html">Ejercicio 3</a>
-  </nav>
-
-  <!-- Lista de meriendas -->
-  <div class="seccion">
-    <h2>Meriendas disponibles</h2>
-    <ul id="lista-meriendas">
-      <!-- Se llena con JavaScript -->
-    </ul>
+  <div class="contenedor">
+    <h1>Ejercicio 1: Menú de meriendas</h1>
+    <p>Mostrar una lista desde un arreglo y, al hacer clic, indicar cuántos elementos tiene.</p>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="destacados.html">Ejercicio 2</a>
+      <a href="listado.html">Ejercicio 3</a>
+    </nav>
   </div>
 
-  <!-- Botón y contador -->
+  <div class="seccion">
+    <h2>Meriendas disponibles</h2>
+    <ul id="lista-meriendas"></ul>
+  </div>
+
   <div class="seccion">
     <button id="btn-contar">Mostrar cantidad</button>
     <p id="resultado-contador">Cantidad: pendiente.</p>
   </div>
 
   <script>
-    // Arreglo con las meriendas
     var meriendas = [
       "Yogur",
       "Fruta",
@@ -125,7 +125,6 @@
       "Medialunas"
     ];
 
-    // Mostrar la lista usando forEach
     var lista = document.getElementById("lista-meriendas");
 
     meriendas.forEach(function(merienda) {
@@ -134,7 +133,6 @@
       lista.appendChild(item);
     });
 
-    // Evento del botón: muestra la cantidad en el DOM
     var boton = document.getElementById("btn-contar");
     var resultado = document.getElementById("resultado-contador");
 
